@@ -1,0 +1,29 @@
+plugins {
+    id 'com.android.library' version '8.2.1'
+}
+
+android {
+    namespace 'androidx.cardview'
+    compileSdk 34
+    defaultConfig {
+        // AndroidXConfig.kt's original default for this checkout.
+        minSdk 19
+        targetSdk 34
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+    sourceSets {
+        main {
+            java.srcDirs = ['../cardview/cardview/src/main/java']
+            res.srcDirs = ['../cardview/cardview/src/main/res']
+            manifest.srcFile 'src/main/AndroidManifest.xml'
+        }
+    }
+}
+
+dependencies {
+    api 'androidx.annotation:annotation:1.1.0'
+    implementation 'androidx.core:core:1.3.0'
+}
